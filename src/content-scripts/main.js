@@ -1,23 +1,20 @@
-console.log('hello ehunt')
-// import { createApp } from 'vue'
-// import App from './components/App.vue'
-// createApp(App).mount('#content')
-// import ua from 'universal-analytics'
-// var version = '100';
+import { createApp } from 'vue'
+import App from '@/content-scripts/App.vue';
+// import store from '@/content-scripts/store'; // VueX 酌情考虑是否使用
+import ElementPlus from 'element-plus'; // vue3 中需使用 ElementPlus
 
-//GA埋点统计
-// let user_id = get_userid();
-// var extGa = ua('UA-140648082-13', user_id, {uid: user_id});
-// extGa.event('埋点名称-找pm提供' + version, '埋点key-找pm提供').send();
 
-// function get_userid() {
-// 	var userid = window.localStorage.getItem('plugin_userId')
-// 	if (userid == null) {
-// 		var dt = new Date;
-// 		dt.setMinutes(dt.getMinutes() + dt.getTimezoneOffset()); // 当前时间(分钟) + 时区偏移(分钟)
-// 		userid = dt.getTime();
-// 		window.localStorage.setItem('plugin_userId', userid);
-// 	}
-// 	return userid;
-// }
-
+document.addEventListener('DOMContentLoaded', function () {
+    let element_css = document.createElement('link');
+	element_css.href = 'https://unpkg.com/element-plus/dist/index.css';
+	element_css.rel = "stylesheet";
+	document.head.append(element_css);
+    
+	const div = document.createElement('div');
+    div.id = 'content-div';
+    document.body.appendChild(div);
+    createApp(App)
+        // .use(store)
+        .use(ElementPlus)
+        .mount('#content-div'); 
+});
