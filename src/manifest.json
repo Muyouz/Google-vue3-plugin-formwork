@@ -26,7 +26,8 @@
 			],
 			"css": [
 				"css/main.css",
-				"css/content.css"
+				"css/content.css",
+                "css/chunk-vendors.css"
 			],
 			"run_at": "document_start"
 		}
