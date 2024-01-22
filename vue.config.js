@@ -25,29 +25,29 @@ const plugins = [
 ];
 
 module.exports = {
-	pages: {
-		popup: {
-			entry: `src/popup/main.js`,
-			template: `src/popup/index.html`,
-			filename: `popup.html`
-	    }
-	},
+    pages: {
+        popup: {
+            entry: `src/popup/main.js`,
+            template: `src/popup/index.html`,
+            filename: `popup.html`
+        }
+    },
 	productionSourceMap: false,
 	pluginOptions: {
-	   browserExtension: {
-	      componentOptions: {
-	         background: {
-	            entry: 'src/background/main.js'
-	         },
-	         contentScripts: {
-	            entries: {
-	               'content-script': [
-	                  'src/content-scripts/main.js'
-	               ]
-	            }
-	         }
-	      }
-	   }
+        browserExtension: {
+            componentOptions: {
+                background: {
+                    entry: 'src/background/main.js'
+                },
+                contentScripts: {
+                    entries: {
+                        'content-script': [
+                            'src/content-scripts/main.js'
+                        ]
+                    }
+                }
+            }
+        }
 	},
 	// 根目录  如果不写 默认是dist
 	outputDir: __dirname + '/' + packageName,
