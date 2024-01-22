@@ -14,7 +14,7 @@ export default {
 	},
 	setup() {
 		onMounted(() => {
-			console.log('注入成功！')
+			console.log('注入成功！1111222222')
 		});
 		const icon =  runtime.getURL(`icon/icon16.png`);
 		return {
