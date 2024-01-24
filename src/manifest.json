@@ -9,7 +9,9 @@
 	
 	"permissions": [],
 	
-	"host_permissions":[],
+	"host_permissions":[
+        "http://localhost:8080/"
+    ],
 	
 	"icons": {
 		"16": "icon/icon16.png",
