@@ -3,6 +3,8 @@ const SSEStream = require('ssestream').default;
 
 function ReloadServer(app, compiler) {
     app.get('/reload', (req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*'); // 设置 CORS 头部
+
         const sseStream = new SSEStream(req);
         sseStream.pipe(res);
 
@@ -24,7 +26,7 @@ function ReloadServer(app, compiler) {
                         }
                     },
                 );
-
+                console.log(1111)
                 setTimeout(() => {
                     sseStream.unpipe(res);
                 }, 100);
